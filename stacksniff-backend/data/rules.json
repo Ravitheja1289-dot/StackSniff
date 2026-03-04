@@ -350,10 +350,10 @@
     "icon": "https://cdn.simpleicons.org/cloudflarepages/F38020",
     "website": "https://pages.cloudflare.com",
     "patterns": [
-      { "type": "header_contains", "key": "server", "value": "cloudflare", "strength": "strong" },
-      { "type": "header_exists", "key": "cf-ray", "strength": "strong" },
-      { "type": "header_contains", "key": "cf-cache-status", "value": "", "strength": "weak" },
-      { "type": "html_contains", "value": "pages.dev", "strength": "weak" }
+      { "type": "html_contains", "value": ".pages.dev", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "cloudflare", "strength": "weak" },
+      { "type": "header_contains", "key": "cf-placement", "value": "", "strength": "strong" },
+      { "type": "script_src_contains", "value": "pages.dev", "strength": "strong" }
     ]
   },
   {

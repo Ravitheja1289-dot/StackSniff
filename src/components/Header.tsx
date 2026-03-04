@@ -29,7 +29,7 @@ export default function Header() {
           How it works
         </a>
         <a
-          href="https://github.com"
+          href="https://github.com/Ravitheja1289-dot/StackSniff"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center gap-1.5 px-3 py-1.5 text-sm text-zinc-300 border border-white/10 rounded-lg hover:border-white/20 hover:text-white transition-all"
