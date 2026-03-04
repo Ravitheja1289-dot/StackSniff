@@ -1,0 +1,833 @@
+[
+  {
+    "id": "nextjs",
+    "name": "Next.js",
+    "category": "Framework",
+    "description": "React framework for production-grade applications",
+    "icon": "https://cdn.simpleicons.org/nextdotjs/white",
+    "website": "https://nextjs.org",
+    "patterns": [
+      { "type": "html_contains", "value": "__NEXT_DATA__", "strength": "strong" },
+      { "type": "script_src_contains", "value": "/_next/static/", "strength": "strong" },
+      { "type": "header_contains", "key": "x-powered-by", "value": "Next.js", "strength": "strong" },
+      { "type": "link_href_contains", "value": "/_next/", "strength": "strong" },
+      { "type": "html_contains", "value": "/_next/image", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "nuxtjs",
+    "name": "Nuxt.js",
+    "category": "Framework",
+    "description": "Vue.js meta-framework for server-rendered apps",
+    "icon": "https://cdn.simpleicons.org/nuxtdotjs/00DC82",
+    "website": "https://nuxt.com",
+    "patterns": [
+      { "type": "html_contains", "value": "__NUXT__", "strength": "strong" },
+      { "type": "html_contains", "value": "window.__nuxt__", "strength": "strong" },
+      { "type": "script_src_contains", "value": "/_nuxt/", "strength": "strong" },
+      { "type": "html_contains", "value": "id=\"__nuxt\"", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "gatsby",
+    "name": "Gatsby",
+    "category": "Framework",
+    "description": "React-based static site generator with GraphQL",
+    "icon": "https://cdn.simpleicons.org/gatsby/663399",
+    "website": "https://www.gatsbyjs.com",
+    "patterns": [
+      { "type": "html_contains", "value": "id=\"___gatsby\"", "strength": "strong" },
+      { "type": "meta_generator", "value": "Gatsby", "strength": "strong" },
+      { "type": "script_src_contains", "value": "/gatsby-", "strength": "strong" },
+      { "type": "html_contains", "value": "gatsby-image", "strength": "strong" },
+      { "type": "html_contains", "value": "gatsby-resp-image", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "remix",
+    "name": "Remix",
+    "category": "Framework",
+    "description": "Full-stack web framework built on React Router",
+    "icon": "https://cdn.simpleicons.org/remix/white",
+    "website": "https://remix.run",
+    "patterns": [
+      { "type": "inline_script_contains", "value": "__remixContext", "strength": "strong" },
+      { "type": "html_contains", "value": "__remixContext", "strength": "strong" },
+      { "type": "html_contains", "value": "data-remix-run", "strength": "strong" },
+      { "type": "html_contains", "value": "__remix_entry", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "sveltekit",
+    "name": "SvelteKit",
+    "category": "Framework",
+    "description": "Full-stack framework for building Svelte apps",
+    "icon": "https://cdn.simpleicons.org/svelte/FF3E00",
+    "website": "https://kit.svelte.dev",
+    "patterns": [
+      { "type": "html_contains", "value": "__sveltekit", "strength": "strong" },
+      { "type": "html_contains", "value": "data-sveltekit", "strength": "strong" },
+      { "type": "script_src_contains", "value": "_app/immutable/", "strength": "strong" },
+      { "type": "html_contains", "value": "svelte-", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "astro",
+    "name": "Astro",
+    "category": "Framework",
+    "description": "Content-focused static site builder with island architecture",
+    "icon": "https://cdn.simpleicons.org/astro/FF5D01",
+    "website": "https://astro.build",
+    "patterns": [
+      { "type": "meta_generator", "value": "Astro", "strength": "strong" },
+      { "type": "html_contains", "value": "data-astro-", "strength": "strong" },
+      { "type": "html_contains", "value": "astro-island", "strength": "strong" },
+      { "type": "script_src_contains", "value": "astro/", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "angular",
+    "name": "Angular",
+    "category": "Framework",
+    "description": "Platform for building mobile and desktop web apps",
+    "icon": "https://cdn.simpleicons.org/angular/DD0031",
+    "website": "https://angular.io",
+    "patterns": [
+      { "type": "html_contains", "value": "ng-version=\"", "strength": "strong" },
+      { "type": "html_contains", "value": "_ngcontent-", "strength": "strong" },
+      { "type": "html_contains", "value": "ng-app=", "strength": "strong" },
+      { "type": "script_src_contains", "value": "angular.min.js", "strength": "strong" },
+      { "type": "html_contains", "value": "ng-controller", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "vuejs",
+    "name": "Vue.js",
+    "category": "Framework",
+    "description": "Progressive JavaScript framework for building UIs",
+    "icon": "https://cdn.simpleicons.org/vuedotjs/4FC08D",
+    "website": "https://vuejs.org",
+    "patterns": [
+      { "type": "html_contains", "value": "data-v-", "strength": "strong" },
+      { "type": "script_src_contains", "value": "vue.min.js", "strength": "strong" },
+      { "type": "script_src_contains", "value": "vue.global", "strength": "strong" },
+      { "type": "html_contains", "value": "id=\"app\" data-v-", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "new Vue(", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "createApp(", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "react",
+    "name": "React",
+    "category": "Framework",
+    "description": "JavaScript library for building user interfaces",
+    "icon": "https://cdn.simpleicons.org/react/61DAFB",
+    "website": "https://react.dev",
+    "patterns": [
+      { "type": "html_contains", "value": "data-reactroot", "strength": "strong" },
+      { "type": "html_contains", "value": "data-reactid", "strength": "strong" },
+      { "type": "html_contains", "value": "__reactFiber", "strength": "strong" },
+      { "type": "script_src_contains", "value": "react-dom", "strength": "strong" },
+      { "type": "script_src_contains", "value": "react.production.min.js", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "React.createElement", "strength": "strong" },
+      { "type": "html_contains", "value": "_reactListening", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "emberjs",
+    "name": "Ember.js",
+    "category": "Framework",
+    "description": "Opinionated framework for ambitious web applications",
+    "icon": "https://cdn.simpleicons.org/emberdotjs/E04E39",
+    "website": "https://emberjs.com",
+    "patterns": [
+      { "type": "html_contains", "value": "data-ember-", "strength": "strong" },
+      { "type": "html_contains", "value": "ember-view", "strength": "strong" },
+      { "type": "meta_generator", "value": "Ember", "strength": "strong" },
+      { "type": "script_src_contains", "value": "ember.min.js", "strength": "strong" },
+      { "type": "html_contains", "value": "id=\"ember", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "wordpress",
+    "name": "WordPress",
+    "category": "CMS",
+    "description": "Open-source CMS powering over 40% of the web",
+    "icon": "https://cdn.simpleicons.org/wordpress/21759B",
+    "website": "https://wordpress.org",
+    "patterns": [
+      { "type": "html_contains", "value": "/wp-content/", "strength": "strong" },
+      { "type": "html_contains", "value": "/wp-includes/", "strength": "strong" },
+      { "type": "meta_generator", "value": "WordPress", "strength": "strong" },
+      { "type": "link_href_contains", "value": "/wp-content/", "strength": "strong" },
+      { "type": "html_contains", "value": "/wp-json/", "strength": "strong" },
+      { "type": "script_src_contains", "value": "/wp-includes/", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "ghost",
+    "name": "Ghost",
+    "category": "CMS",
+    "description": "Professional publishing platform for content creators",
+    "icon": "https://cdn.simpleicons.org/ghost/white",
+    "website": "https://ghost.org",
+    "patterns": [
+      { "type": "meta_generator", "value": "Ghost", "strength": "strong" },
+      { "type": "link_href_contains", "value": "/ghost/", "strength": "strong" },
+      { "type": "html_contains", "value": "ghost-portal", "strength": "strong" },
+      { "type": "script_src_contains", "value": "ghost.org", "strength": "strong" },
+      { "type": "header_exists", "key": "x-ghost-cache-status", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "drupal",
+    "name": "Drupal",
+    "category": "CMS",
+    "description": "Enterprise-grade open-source content management system",
+    "icon": "https://cdn.simpleicons.org/drupal/0678BE",
+    "website": "https://www.drupal.org",
+    "patterns": [
+      { "type": "meta_generator", "value": "Drupal", "strength": "strong" },
+      { "type": "header_exists", "key": "x-drupal-cache", "strength": "strong" },
+      { "type": "header_exists", "key": "x-drupal-dynamic-cache", "strength": "strong" },
+      { "type": "html_contains", "value": "Drupal.settings", "strength": "strong" },
+      { "type": "link_href_contains", "value": "/sites/default/files/", "strength": "strong" },
+      { "type": "html_contains", "value": "drupal.js", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "joomla",
+    "name": "Joomla",
+    "category": "CMS",
+    "description": "Free and open-source content management system",
+    "icon": "https://cdn.simpleicons.org/joomla/5091CD",
+    "website": "https://www.joomla.org",
+    "patterns": [
+      { "type": "meta_generator", "value": "Joomla", "strength": "strong" },
+      { "type": "script_src_contains", "value": "/media/system/js/", "strength": "strong" },
+      { "type": "html_contains", "value": "/media/jui/", "strength": "strong" },
+      { "type": "html_contains", "value": "Joomla!", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "contentful",
+    "name": "Contentful",
+    "category": "CMS",
+    "description": "API-first headless content management platform",
+    "icon": "https://cdn.simpleicons.org/contentful/2478CC",
+    "website": "https://www.contentful.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "contentful.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "contentful.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "ctfassets.net", "strength": "strong" },
+      { "type": "link_href_contains", "value": "ctfassets.net", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "createClient", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "webflow",
+    "name": "Webflow",
+    "category": "CMS",
+    "description": "Visual web development platform with built-in CMS",
+    "icon": "https://cdn.simpleicons.org/webflow/4353FF",
+    "website": "https://webflow.com",
+    "patterns": [
+      { "type": "meta_generator", "value": "Webflow", "strength": "strong" },
+      { "type": "html_contains", "value": "webflow.com/js/", "strength": "strong" },
+      { "type": "script_src_contains", "value": "webflow.", "strength": "strong" },
+      { "type": "html_contains", "value": "data-wf-", "strength": "strong" },
+      { "type": "link_href_contains", "value": "uploads-ssl.webflow.com", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "shopify",
+    "name": "Shopify",
+    "category": "Ecommerce",
+    "description": "Leading e-commerce platform for online stores",
+    "icon": "https://cdn.simpleicons.org/shopify/7AB55C",
+    "website": "https://www.shopify.com",
+    "patterns": [
+      { "type": "html_contains", "value": "cdn.shopify.com", "strength": "strong" },
+      { "type": "header_exists", "key": "x-shopify-stage", "strength": "strong" },
+      { "type": "script_src_contains", "value": "cdn.shopify.com", "strength": "strong" },
+      { "type": "link_href_contains", "value": "cdn.shopify.com", "strength": "strong" },
+      { "type": "html_contains", "value": "Shopify.theme", "strength": "strong" },
+      { "type": "cookie_contains", "value": "_shopify", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "woocommerce",
+    "name": "WooCommerce",
+    "category": "Ecommerce",
+    "description": "Open-source e-commerce plugin for WordPress",
+    "icon": "https://cdn.simpleicons.org/woocommerce/96588A",
+    "website": "https://woocommerce.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "woocommerce", "strength": "strong" },
+      { "type": "link_href_contains", "value": "woocommerce", "strength": "strong" },
+      { "type": "html_contains", "value": "wc-block-", "strength": "strong" },
+      { "type": "html_contains", "value": "wc_add_to_cart", "strength": "strong" },
+      { "type": "html_contains", "value": "class=\"woocommerce", "strength": "strong" },
+      { "type": "html_contains", "value": "/wp-content/plugins/woocommerce/", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "magento",
+    "name": "Magento",
+    "category": "Ecommerce",
+    "description": "Enterprise open-source e-commerce platform",
+    "icon": "https://cdn.simpleicons.org/magento/EE672F",
+    "website": "https://business.adobe.com/products/magento/magento-commerce.html",
+    "patterns": [
+      { "type": "html_contains", "value": "mage-init", "strength": "strong" },
+      { "type": "html_contains", "value": "Mage.Cookies", "strength": "strong" },
+      { "type": "script_src_contains", "value": "mage/", "strength": "strong" },
+      { "type": "cookie_contains", "value": "mage-cache", "strength": "strong" },
+      { "type": "html_contains", "value": "catalog-product", "strength": "weak" },
+      { "type": "script_src_contains", "value": "/static/frontend/", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "bigcommerce",
+    "name": "BigCommerce",
+    "category": "Ecommerce",
+    "description": "SaaS e-commerce platform for growing businesses",
+    "icon": "https://cdn.simpleicons.org/bigcommerce/121118",
+    "website": "https://www.bigcommerce.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "bigcommerce.com", "strength": "strong" },
+      { "type": "html_contains", "value": "data-bigcommerce", "strength": "strong" },
+      { "type": "header_contains", "key": "x-bc-origin", "value": "", "strength": "strong" },
+      { "type": "link_href_contains", "value": "bigcommerce.com", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "squarespace",
+    "name": "Squarespace",
+    "category": "Hosting",
+    "description": "All-in-one website builder and hosting platform",
+    "icon": "https://cdn.simpleicons.org/squarespace/white",
+    "website": "https://www.squarespace.com",
+    "patterns": [
+      { "type": "html_contains", "value": "static.squarespace.com", "strength": "strong" },
+      { "type": "html_contains", "value": "squarespace-cdn.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "static.squarespace.com", "strength": "strong" },
+      { "type": "html_contains", "value": "data-squarespace-", "strength": "strong" },
+      { "type": "html_contains", "value": "sqs-block", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "vercel",
+    "name": "Vercel",
+    "category": "Hosting",
+    "description": "Cloud platform for static and serverless deployment",
+    "icon": "https://cdn.simpleicons.org/vercel/white",
+    "website": "https://vercel.com",
+    "patterns": [
+      { "type": "header_exists", "key": "x-vercel-id", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "vercel", "strength": "strong" },
+      { "type": "header_exists", "key": "x-vercel-cache", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "netlify",
+    "name": "Netlify",
+    "category": "Hosting",
+    "description": "Platform for deploying modern web projects",
+    "icon": "https://cdn.simpleicons.org/netlify/00C7B7",
+    "website": "https://www.netlify.com",
+    "patterns": [
+      { "type": "header_exists", "key": "x-nf-request-id", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "netlify", "strength": "strong" },
+      { "type": "header_exists", "key": "x-netlify-cache", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "cloudflare-pages",
+    "name": "Cloudflare Pages",
+    "category": "Hosting",
+    "description": "JAMstack platform for deploying full-stack apps",
+    "icon": "https://cdn.simpleicons.org/cloudflarepages/F38020",
+    "website": "https://pages.cloudflare.com",
+    "patterns": [
+      { "type": "header_contains", "key": "server", "value": "cloudflare", "strength": "strong" },
+      { "type": "header_exists", "key": "cf-ray", "strength": "strong" },
+      { "type": "header_contains", "key": "cf-cache-status", "value": "", "strength": "weak" },
+      { "type": "html_contains", "value": "pages.dev", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "github-pages",
+    "name": "GitHub Pages",
+    "category": "Hosting",
+    "description": "Free static site hosting from GitHub repositories",
+    "icon": "https://cdn.simpleicons.org/github/white",
+    "website": "https://pages.github.com",
+    "patterns": [
+      { "type": "header_contains", "key": "server", "value": "github.com", "strength": "strong" },
+      { "type": "header_contains", "key": "via", "value": "github.com", "strength": "strong" },
+      { "type": "header_exists", "key": "x-github-request-id", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "aws",
+    "name": "Amazon Web Services",
+    "category": "Hosting",
+    "description": "Cloud computing platform by Amazon",
+    "icon": "https://cdn.simpleicons.org/amazonaws/FF9900",
+    "website": "https://aws.amazon.com",
+    "patterns": [
+      { "type": "header_contains", "key": "server", "value": "AmazonS3", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "awselb", "strength": "strong" },
+      { "type": "header_exists", "key": "x-amz-request-id", "strength": "strong" },
+      { "type": "header_exists", "key": "x-amzn-requestid", "strength": "strong" },
+      { "type": "header_exists", "key": "x-amz-cf-id", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "wix",
+    "name": "Wix",
+    "category": "Hosting",
+    "description": "Cloud-based website builder with drag-and-drop editor",
+    "icon": "https://cdn.simpleicons.org/wix/0C6EFC",
+    "website": "https://www.wix.com",
+    "patterns": [
+      { "type": "header_exists", "key": "x-wix-request-id", "strength": "strong" },
+      { "type": "html_contains", "value": "static.wixstatic.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "static.parastorage.com", "strength": "strong" },
+      { "type": "html_contains", "value": "wix-code-sdk", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "cloudflare",
+    "name": "Cloudflare",
+    "category": "CDN",
+    "description": "Global CDN, DDoS protection, and DNS service",
+    "icon": "https://cdn.simpleicons.org/cloudflare/F38020",
+    "website": "https://www.cloudflare.com",
+    "patterns": [
+      { "type": "header_exists", "key": "cf-ray", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "cloudflare", "strength": "strong" },
+      { "type": "header_exists", "key": "cf-cache-status", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "fastly",
+    "name": "Fastly",
+    "category": "CDN",
+    "description": "Edge cloud platform and content delivery network",
+    "icon": "https://cdn.simpleicons.org/fastly/FF282D",
+    "website": "https://www.fastly.com",
+    "patterns": [
+      { "type": "header_contains", "key": "via", "value": "varnish", "strength": "strong" },
+      { "type": "header_exists", "key": "x-served-by", "strength": "strong" },
+      { "type": "header_exists", "key": "x-timer", "strength": "strong" },
+      { "type": "header_exists", "key": "x-cache-hits", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "akamai",
+    "name": "Akamai",
+    "category": "CDN",
+    "description": "Enterprise CDN and cybersecurity platform",
+    "icon": "https://cdn.simpleicons.org/akamai/009BDE",
+    "website": "https://www.akamai.com",
+    "patterns": [
+      { "type": "header_exists", "key": "x-akamai-transformed", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "AkamaiGHost", "strength": "strong" },
+      { "type": "header_contains", "key": "server", "value": "AkamaiNetStorage", "strength": "strong" },
+      { "type": "script_src_contains", "value": "akamaihd.net", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "jsdelivr",
+    "name": "jsDelivr",
+    "category": "CDN",
+    "description": "Free open-source CDN for npm and GitHub projects",
+    "icon": "https://cdn.simpleicons.org/jsdelivr/E84D3D",
+    "website": "https://www.jsdelivr.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "cdn.jsdelivr.net", "strength": "strong" },
+      { "type": "link_href_contains", "value": "cdn.jsdelivr.net", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "google-analytics",
+    "name": "Google Analytics",
+    "category": "Analytics",
+    "description": "Web analytics service for tracking website traffic",
+    "icon": "https://cdn.simpleicons.org/googleanalytics/E37400",
+    "website": "https://analytics.google.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "google-analytics.com/analytics.js", "strength": "strong" },
+      { "type": "script_src_contains", "value": "googletagmanager.com/gtag/", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "google-analytics.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "gtag('config',", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "ga('create',", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "google-tag-manager",
+    "name": "Google Tag Manager",
+    "category": "Analytics",
+    "description": "Tag management system for tracking and analytics code",
+    "icon": "https://cdn.simpleicons.org/googletagmanager/246FDB",
+    "website": "https://tagmanager.google.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "googletagmanager.com/gtm.js", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "GTM-", "strength": "strong" },
+      { "type": "html_contains", "value": "googletagmanager.com/ns.html", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "hotjar",
+    "name": "Hotjar",
+    "category": "Analytics",
+    "description": "Behavior analytics with heatmaps and session recordings",
+    "icon": "https://cdn.simpleicons.org/hotjar/FF3C00",
+    "website": "https://www.hotjar.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "static.hotjar.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "hotjar.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "hj('init'", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "_hjSettings", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "mixpanel",
+    "name": "Mixpanel",
+    "category": "Analytics",
+    "description": "Product analytics for tracking user interactions",
+    "icon": "https://cdn.simpleicons.org/mixpanel/7856FF",
+    "website": "https://mixpanel.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "cdn.mxpnl.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "mixpanel.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "mixpanel.init", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "segment",
+    "name": "Segment",
+    "category": "Analytics",
+    "description": "Customer data platform for collecting and routing analytics",
+    "icon": "https://cdn.simpleicons.org/segment/52BD94",
+    "website": "https://segment.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "cdn.segment.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "analytics.load(", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "cdn.segment.com", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "plausible",
+    "name": "Plausible",
+    "category": "Analytics",
+    "description": "Lightweight, privacy-friendly web analytics",
+    "icon": "https://cdn.simpleicons.org/plausibleanalytics/5850EC",
+    "website": "https://plausible.io",
+    "patterns": [
+      { "type": "script_src_contains", "value": "plausible.io/js/", "strength": "strong" },
+      { "type": "html_contains", "value": "data-domain=\"", "strength": "weak" },
+      { "type": "script_src_contains", "value": "plausible.io", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "fathom",
+    "name": "Fathom",
+    "category": "Analytics",
+    "description": "Simple, privacy-first website analytics",
+    "icon": "https://cdn.simpleicons.org/fathom/9187FF",
+    "website": "https://usefathom.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "cdn.usefathom.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "usefathom.com", "strength": "strong" },
+      { "type": "html_contains", "value": "data-site=\"", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "heap",
+    "name": "Heap",
+    "category": "Analytics",
+    "description": "Auto-capture analytics platform for digital insights",
+    "icon": "https://cdn.simpleicons.org/heap/FF4B00",
+    "website": "https://heap.io",
+    "patterns": [
+      { "type": "script_src_contains", "value": "heapanalytics.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "heap-", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "heap.load(", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "tailwindcss",
+    "name": "Tailwind CSS",
+    "category": "CSS Framework",
+    "description": "Utility-first CSS framework for rapid UI development",
+    "icon": "https://cdn.simpleicons.org/tailwindcss/06B6D4",
+    "website": "https://tailwindcss.com",
+    "patterns": [
+      { "type": "link_href_contains", "value": "tailwind", "strength": "strong" },
+      { "type": "script_src_contains", "value": "tailwindcss", "strength": "strong" },
+      { "type": "html_contains", "value": "tailwindcss", "strength": "strong" },
+      { "type": "class_name_contains", "value": "max-w-", "strength": "weak" },
+      { "type": "class_name_contains", "value": "text-sm", "strength": "weak" },
+      { "type": "class_name_contains", "value": "px-4", "strength": "weak" },
+      { "type": "class_name_contains", "value": "rounded-lg", "strength": "weak" },
+      { "type": "class_name_contains", "value": "flex-col", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "bootstrap",
+    "name": "Bootstrap",
+    "category": "CSS Framework",
+    "description": "Popular CSS framework for responsive web design",
+    "icon": "https://cdn.simpleicons.org/bootstrap/7952B3",
+    "website": "https://getbootstrap.com",
+    "patterns": [
+      { "type": "link_href_contains", "value": "bootstrap.min.css", "strength": "strong" },
+      { "type": "script_src_contains", "value": "bootstrap.min.js", "strength": "strong" },
+      { "type": "script_src_contains", "value": "bootstrap.bundle", "strength": "strong" },
+      { "type": "link_href_contains", "value": "bootstrap.css", "strength": "strong" },
+      { "type": "class_name_contains", "value": "container-fluid", "strength": "weak" },
+      { "type": "class_name_contains", "value": "col-md-", "strength": "weak" },
+      { "type": "class_name_contains", "value": "btn-primary", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "bulma",
+    "name": "Bulma",
+    "category": "CSS Framework",
+    "description": "Modern CSS framework based on Flexbox",
+    "icon": "https://cdn.simpleicons.org/bulma/00D1B2",
+    "website": "https://bulma.io",
+    "patterns": [
+      { "type": "link_href_contains", "value": "bulma.min.css", "strength": "strong" },
+      { "type": "link_href_contains", "value": "bulma.css", "strength": "strong" },
+      { "type": "link_href_contains", "value": "bulma.io", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "foundation",
+    "name": "Foundation",
+    "category": "CSS Framework",
+    "description": "Responsive front-end framework by Zurb",
+    "icon": "https://cdn.simpleicons.org/zurb/2199E8",
+    "website": "https://get.foundation",
+    "patterns": [
+      { "type": "link_href_contains", "value": "foundation.min.css", "strength": "strong" },
+      { "type": "script_src_contains", "value": "foundation.min.js", "strength": "strong" },
+      { "type": "link_href_contains", "value": "foundation.css", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "php",
+    "name": "PHP",
+    "category": "Language",
+    "description": "Server-side scripting language for web development",
+    "icon": "https://cdn.simpleicons.org/php/777BB4",
+    "website": "https://www.php.net",
+    "patterns": [
+      { "type": "header_contains", "key": "x-powered-by", "value": "PHP", "strength": "strong" },
+      { "type": "cookie_contains", "value": "PHPSESSID", "strength": "strong" },
+      { "type": "script_src_contains", "value": ".php", "strength": "weak" },
+      { "type": "html_contains", "value": "action=\"/index.php", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "laravel",
+    "name": "Laravel",
+    "category": "Framework",
+    "description": "Elegant PHP web application framework",
+    "icon": "https://cdn.simpleicons.org/laravel/FF2D20",
+    "website": "https://laravel.com",
+    "patterns": [
+      { "type": "cookie_contains", "value": "laravel_session", "strength": "strong" },
+      { "type": "header_contains", "key": "set-cookie", "value": "laravel_session", "strength": "strong" },
+      { "type": "header_contains", "key": "x-powered-by", "value": "Laravel", "strength": "strong" },
+      { "type": "html_contains", "value": "csrf-token", "strength": "weak" },
+      { "type": "cookie_contains", "value": "XSRF-TOKEN", "strength": "weak" }
+    ]
+  },
+  {
+    "id": "django",
+    "name": "Django",
+    "category": "Framework",
+    "description": "High-level Python web framework for rapid development",
+    "icon": "https://cdn.simpleicons.org/django/092E20",
+    "website": "https://www.djangoproject.com",
+    "patterns": [
+      { "type": "cookie_contains", "value": "csrftoken", "strength": "strong" },
+      { "type": "cookie_contains", "value": "djdt", "strength": "strong" },
+      { "type": "header_contains", "key": "x-powered-by", "value": "Django", "strength": "strong" },
+      { "type": "html_contains", "value": "csrfmiddlewaretoken", "strength": "strong" },
+      { "type": "html_contains", "value": "__admin_media_prefix__", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "rails",
+    "name": "Ruby on Rails",
+    "category": "Framework",
+    "description": "Server-side MVC web application framework in Ruby",
+    "icon": "https://cdn.simpleicons.org/rubyonrails/CC0000",
+    "website": "https://rubyonrails.org",
+    "patterns": [
+      { "type": "header_contains", "key": "x-powered-by", "value": "Phusion Passenger", "strength": "strong" },
+      { "type": "header_exists", "key": "x-runtime", "strength": "strong" },
+      { "type": "header_exists", "key": "x-request-id", "strength": "weak" },
+      { "type": "cookie_contains", "value": "_rails_session", "strength": "strong" },
+      { "type": "html_contains", "value": "csrf-param", "strength": "weak" },
+      { "type": "html_contains", "value": "csrf-token", "strength": "weak" },
+      { "type": "html_contains", "value": "data-turbo-", "strength": "strong" },
+      { "type": "html_contains", "value": "data-turbolinks-", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "aspnet",
+    "name": "ASP.NET",
+    "category": "Framework",
+    "description": "Microsoft's web framework for building modern apps",
+    "icon": "https://cdn.simpleicons.org/dotnet/512BD4",
+    "website": "https://dotnet.microsoft.com/apps/aspnet",
+    "patterns": [
+      { "type": "header_contains", "key": "x-powered-by", "value": "ASP.NET", "strength": "strong" },
+      { "type": "header_exists", "key": "x-aspnet-version", "strength": "strong" },
+      { "type": "cookie_contains", "value": "ASP.NET_SessionId", "strength": "strong" },
+      { "type": "cookie_contains", "value": ".AspNetCore", "strength": "strong" },
+      { "type": "html_contains", "value": "__VIEWSTATE", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "jquery",
+    "name": "jQuery",
+    "category": "Library",
+    "description": "Fast, small, feature-rich JavaScript library",
+    "icon": "https://cdn.simpleicons.org/jquery/0769AD",
+    "website": "https://jquery.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "jquery.min.js", "strength": "strong" },
+      { "type": "script_src_contains", "value": "jquery-", "strength": "strong" },
+      { "type": "script_src_contains", "value": "jquery/", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "jQuery(", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "$(document).ready", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "google-fonts",
+    "name": "Google Fonts",
+    "category": "CDN",
+    "description": "Free web font hosting service by Google",
+    "icon": "https://cdn.simpleicons.org/googlefonts/4285F4",
+    "website": "https://fonts.google.com",
+    "patterns": [
+      { "type": "link_href_contains", "value": "fonts.googleapis.com", "strength": "strong" },
+      { "type": "link_href_contains", "value": "fonts.gstatic.com", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "unpkg",
+    "name": "unpkg",
+    "category": "CDN",
+    "description": "Fast global CDN for npm packages",
+    "icon": "https://cdn.simpleicons.org/npm/CB3837",
+    "website": "https://unpkg.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "unpkg.com/", "strength": "strong" },
+      { "type": "link_href_contains", "value": "unpkg.com/", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "hubspot",
+    "name": "HubSpot",
+    "category": "Analytics",
+    "description": "CRM platform with marketing and analytics tools",
+    "icon": "https://cdn.simpleicons.org/hubspot/FF7A59",
+    "website": "https://www.hubspot.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "js.hs-scripts.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "js.hubspot.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "hs-analytics.net", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "_hsq.push", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "intercom",
+    "name": "Intercom",
+    "category": "Analytics",
+    "description": "Customer messaging platform with live chat and bots",
+    "icon": "https://cdn.simpleicons.org/intercom/6AFDEF",
+    "website": "https://www.intercom.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "widget.intercom.io", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "intercomSettings", "strength": "strong" },
+      { "type": "html_contains", "value": "intercom-frame", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "Intercom(", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "category": "Library",
+    "description": "Payment processing platform for internet businesses",
+    "icon": "https://cdn.simpleicons.org/stripe/635BFF",
+    "website": "https://stripe.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "js.stripe.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "Stripe(", "strength": "strong" },
+      { "type": "html_contains", "value": "stripe-button", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "cloudfront",
+    "name": "Amazon CloudFront",
+    "category": "CDN",
+    "description": "AWS content delivery network for fast global distribution",
+    "icon": "https://cdn.simpleicons.org/amazonaws/FF9900",
+    "website": "https://aws.amazon.com/cloudfront/",
+    "patterns": [
+      { "type": "header_exists", "key": "x-amz-cf-id", "strength": "strong" },
+      { "type": "header_exists", "key": "x-amz-cf-pop", "strength": "strong" },
+      { "type": "script_src_contains", "value": "cloudfront.net", "strength": "strong" },
+      { "type": "link_href_contains", "value": "cloudfront.net", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "sentry",
+    "name": "Sentry",
+    "category": "Analytics",
+    "description": "Application performance monitoring and error tracking",
+    "icon": "https://cdn.simpleicons.org/sentry/362D59",
+    "website": "https://sentry.io",
+    "patterns": [
+      { "type": "script_src_contains", "value": "browser.sentry-cdn.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "sentry.io", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "Sentry.init", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "sentry-cdn.com", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "crisp",
+    "name": "Crisp",
+    "category": "Analytics",
+    "description": "Customer messaging platform with live chat widget",
+    "icon": "https://cdn.simpleicons.org/crisp/1972F5",
+    "website": "https://crisp.chat",
+    "patterns": [
+      { "type": "script_src_contains", "value": "client.crisp.chat", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "CRISP_WEBSITE_ID", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "crisp.chat", "strength": "strong" }
+    ]
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "category": "Analytics",
+    "description": "Customer service software and support ticketing system",
+    "icon": "https://cdn.simpleicons.org/zendesk/03363D",
+    "website": "https://www.zendesk.com",
+    "patterns": [
+      { "type": "script_src_contains", "value": "static.zdassets.com", "strength": "strong" },
+      { "type": "script_src_contains", "value": "zendesk.com", "strength": "strong" },
+      { "type": "inline_script_contains", "value": "zE(", "strength": "strong" }
+    ]
+  }
+]
